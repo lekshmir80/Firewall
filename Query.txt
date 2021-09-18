@@ -1,0 +1,6 @@
+5.Firewall management:
+	-Status of firewall
+	-Set Rules(Take input allow/deny,from,to,in/out,proto,port)
+	-Delete Rules
+	-Reload the rules
+
