@@ -83,11 +83,7 @@ def fw_add_sources():
 	yprint(os.popen(cmd).read())
 	yprint("\t Sources added!!!!")
 	
-def fw_block_ip():
-	ip_addr = input("\tEnter the ip to be block:	")
-	cmd = "sudo firewall-cmd --permanent --add-rich-rule='rule family='ipv4' source address="+ip_addr+" reject" 
-	os.popen(cmd).read()
-	yprint("Blocked!!!!")
+
 	
 def fw_delete_source_port():
 	port = Prompt.ask("\tEnter port number	")
@@ -171,7 +167,6 @@ def main_menu():
 	gprint("[3] Get Active Zones")
 	gprint("[4] Get Details of Active Zones")
 	gprint("[5] Reload firewall")
-	gprint("[6] Block ip address")
 	gprint("[7] Exit")
 
 
@@ -180,7 +175,7 @@ if __name__ == "__main__":
 	fw_get_status()
 	while True:
 		main_menu()
-		ch = Prompt.ask("Enter your option : ", choices=["1", "2", "3","4","5","6","7"])
+		ch = Prompt.ask("Enter your option : ", choices=["1", "2", "3","4","5","6"])
 		if ch == "1":
 			fw_add_rule()
 		elif ch == "2":
@@ -192,7 +187,5 @@ if __name__ == "__main__":
 		elif ch == "5":
 			fw_reload()
 		elif ch == "6":
-			fw_block_ip()
-		elif ch == "7":
 			break;
 			
